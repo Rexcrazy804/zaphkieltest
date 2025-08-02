@@ -9,6 +9,7 @@
 
     zaphkiel = {
       url = "github:Rexcrazy804/Zaphkiel?ref=centralization";
+      # url = "git+file:///home/rexies/nixos";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.quickshell.follows = "quickshell";
       inputs.systems.follows = "systems";

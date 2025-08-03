@@ -1,24 +1,49 @@
 # built with nix build .#nixosConfigurations.SangoPearl.config.system.build.vm
 # you are welcome :>
 {
+  lib,
+  config,
   modulesPath,
+  inputs,
   pkgs,
   ...
 }: {
+  # only required for the VM
   imports = [(modulesPath + "/virtualisation/qemu-vm.nix")];
 
-  networking.hostName = "SangoPearl";
-  system.stateVersion = "25.05";
-  virtualisation = {
-    diskSize = 4 * 1024;
-    memorySize = 2 * 1024;
-    cores = 2;
+  # this is what you need
+  programs.hyprland.enable = true;
+  programs.kurukuruDM = {
+    enable = true;
+    package = pkgs.kurukurubar;
+    settings.wallpaper = inputs.zaphkiel.packages.${pkgs.system}.booru-images.i2768802;
   };
 
-  security.sudo.wheelNeedsPassword = false;
-  nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  environment.systemPackages = [
+    # the kurukuruDM module adds an overlay including pkgs.kurukurubar and pkgs.kurukurubar-unstable
+    pkgs.kurukurubar
 
+    # if not using the kurukuruDM nixosModule
+    # inputs.zaphkiel.packages.${pkgs.systme}.kurukurubar
+  ];
+  hjem.users.rexies = {
+    enable = true;
+    user = "rexies";
+    directory = config.users.users.rexies.home;
+    clobberFiles = lib.mkForce true;
+    files = {
+      ".config/hypr/hyprland.conf".text = ''
+        exec-once = kurukurubar
+        misc {
+          force_default_wallpaper = 1
+          disable_hyprland_logo = true
+        }
+      '';
+      ".config/background".source = config.programs.kurukuruDM.settings.wallpaper;
+    };
+  };
+
+  # the simp
   users.users.rexies = {
     enable = true;
     initialPassword = "kokomi";
@@ -28,11 +53,19 @@
     packages = [];
   };
 
-  programs.hyprland.enable = true;
-  programs.kurukuruDM = {
-    enable = true;
-    package = pkgs.kurukurubar;
+  # vm only stuff
+  virtualisation = {
+    diskSize = 4 * 1024;
+    memorySize = 2 * 1024;
+    cores = 2;
   };
 
+  # just makes my debugging life easier
+  security.sudo.wheelNeedsPassword = false;
+  nixpkgs.config.allowUnfree = true;
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
+  networking.hostName = "SangoPearl";
+  system.stateVersion = "25.05";
   nixpkgs.hostPlatform = "x86_64-linux";
 }

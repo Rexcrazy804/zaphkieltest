@@ -1,5 +1,26 @@
 {
   "nodes": {
+    "hjem": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "smfh": "smfh"
+      },
+      "locked": {
+        "lastModified": 1752303056,
+        "narHash": "sha256-LzojKFWAAreWyH56aupj/MLwuPPnnyzplw/xdbavC9c=",
+        "owner": "feel-co",
+        "repo": "hjem",
+        "rev": "3093a74542b30f8155954d585d0ae2401e3adbe5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "feel-co",
+        "repo": "hjem",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1753939845,
@@ -38,13 +59,74 @@
     },
     "root": {
       "inputs": {
+        "hjem": "hjem",
         "nixpkgs": "nixpkgs",
         "quickshell": "quickshell",
-        "systems": "systems",
+        "systems": "systems_2",
         "zaphkiel": "zaphkiel"
       }
     },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "hjem",
+          "smfh",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1747622321,
+        "narHash": "sha256-W0dYIWgsUu6rvOJRtKLhKskkv0VhQhJYGNIq+gGUc8g=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "bd030fd9983f7fddf87be1c64aa3064c8afa24c4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "smfh": {
+      "inputs": {
+        "nixpkgs": [
+          "hjem",
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay",
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1749906619,
+        "narHash": "sha256-/9Ww10kYopxfCNNnNDwENTubs7Wzqlw+O6PJAHNOYQw=",
+        "owner": "feel-co",
+        "repo": "smfh",
+        "rev": "39f5c06153f63100376bc607b1465850b6df77fd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "feel-co",
+        "repo": "smfh",
+        "type": "github"
+      }
+    },
     "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_2": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
@@ -72,16 +154,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1754152085,
-        "narHash": "sha256-bD7BH181FTiYn8cVJUetIJf72XNTd4bPmzJoJitVl+s=",
+        "lastModified": 1754227344,
+        "narHash": "sha256-BuekZI/Fhu0Q9Jnz+BYbJT5Q1Li7LhfziyL7IGWw9Po=",
         "owner": "Rexcrazy804",
         "repo": "Zaphkiel",
-        "rev": "2b7d4af79bab332cdda1ff18729a5d623f46bc58",
+        "rev": "e52788d440daaecd21b12cd8a7d10e88639668e6",
         "type": "github"
       },
       "original": {
         "owner": "Rexcrazy804",
-        "ref": "centralization",
         "repo": "Zaphkiel",
         "type": "github"
       }

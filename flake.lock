@@ -8,17 +8,31 @@
         "smfh": "smfh"
       },
       "locked": {
-        "lastModified": 1752303056,
-        "narHash": "sha256-LzojKFWAAreWyH56aupj/MLwuPPnnyzplw/xdbavC9c=",
+        "lastModified": 1755630157,
+        "narHash": "sha256-4XnVeNej5FJLBavw3qxoHI01ojmryeNzT6Mk9Q0nDXQ=",
         "owner": "feel-co",
         "repo": "hjem",
-        "rev": "3093a74542b30f8155954d585d0ae2401e3adbe5",
+        "rev": "565a15366d7b5aa5483ebe101fbc0ea27f0516b7",
         "type": "github"
       },
       "original": {
         "owner": "feel-co",
         "repo": "hjem",
         "type": "github"
+      }
+    },
+    "hjem-impure": {
+      "locked": {
+        "dirtyRev": "a3f0279826cf89509841c677e890eb96132bfd56-dirty",
+        "dirtyShortRev": "a3f0279-dirty",
+        "lastModified": 1755851503,
+        "narHash": "sha256-VsA89Qn0I6eS+ZxFiTUKp7/U/UtGN/W774nkIc0t2ck=",
+        "type": "git",
+        "url": "file:///home/rexies/Everwinter/Nix/hjem-impure"
+      },
+      "original": {
+        "type": "git",
+        "url": "file:///home/rexies/Everwinter/Nix/hjem-impure"
       }
     },
     "nixpkgs": {
@@ -60,6 +74,7 @@
     "root": {
       "inputs": {
         "hjem": "hjem",
+        "hjem-impure": "hjem-impure",
         "nixpkgs": "nixpkgs",
         "quickshell": "quickshell",
         "systems": "systems_2",

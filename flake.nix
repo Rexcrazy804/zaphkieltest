@@ -7,6 +7,9 @@
       url = "github:feel-co/hjem";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hjem-impure = {
+      url = "git+file:///home/rexies/Everwinter/Nix/hjem-impure";
+    };
     quickshell = {
       url = "github:quickshell-mirror/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,6 +39,7 @@
   in {
     packages = forAllSystems (pkgs: {
       default = zaphkiel.packages.${pkgs.system}.kurukurubar-unstable;
+      testVm = self.nixosConfigurations.SangoPearl.config.system.build.vm;
     });
 
     nixosConfigurations.SangoPearl = nixpkgs.lib.nixosSystem {

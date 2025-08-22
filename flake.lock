@@ -23,10 +23,11 @@
     },
     "hjem-impure": {
       "locked": {
-        "dirtyRev": "a3f0279826cf89509841c677e890eb96132bfd56-dirty",
-        "dirtyShortRev": "a3f0279-dirty",
-        "lastModified": 1755851503,
-        "narHash": "sha256-VsA89Qn0I6eS+ZxFiTUKp7/U/UtGN/W774nkIc0t2ck=",
+        "lastModified": 1755869554,
+        "narHash": "sha256-cip8wVz8xBgma4DLPjbiFfSVPpLKfEw9BoYkOJpUAbM=",
+        "ref": "refs/heads/master",
+        "rev": "91b5ad689612d451ba265240ac2f8d60cff06c22",
+        "revCount": 18,
         "type": "git",
         "url": "file:///home/rexies/Everwinter/Nix/hjem-impure"
       },

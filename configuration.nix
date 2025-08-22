@@ -27,7 +27,9 @@
     # inputs.zaphkiel.packages.${pkgs.systme}.kurukurubar
   ];
   hjem.extraModules = [inputs.hjem-impure.hjemModules.default];
-  hjem.users.rexies = {
+  hjem.users.rexies = let
+    inherit (config.hjem.users.rexies.impure) dotsDir;
+  in {
     enable = true;
     user = "rexies";
     impure = {
@@ -47,10 +49,11 @@
       '';
       ".config/background".source = config.programs.kurukuruDM.settings.wallpaper;
     };
-    xdg.config.files = let
-      inherit (config.hjem.users.rexies.impure) dotsDir;
-    in {
+    xdg.config.files = {
       "sangonomiya".source = dotsDir + "/kokomi";
+    };
+    files = {
+      "kok".source = dotsDir + "/kokomi";
     };
   };
 

@@ -8,16 +8,31 @@
         "smfh": "smfh"
       },
       "locked": {
-        "lastModified": 1752303056,
-        "narHash": "sha256-LzojKFWAAreWyH56aupj/MLwuPPnnyzplw/xdbavC9c=",
+        "lastModified": 1755630157,
+        "narHash": "sha256-4XnVeNej5FJLBavw3qxoHI01ojmryeNzT6Mk9Q0nDXQ=",
         "owner": "feel-co",
         "repo": "hjem",
-        "rev": "3093a74542b30f8155954d585d0ae2401e3adbe5",
+        "rev": "565a15366d7b5aa5483ebe101fbc0ea27f0516b7",
         "type": "github"
       },
       "original": {
         "owner": "feel-co",
         "repo": "hjem",
+        "type": "github"
+      }
+    },
+    "hjem-impure": {
+      "locked": {
+        "lastModified": 1756118186,
+        "narHash": "sha256-XvsDMpACcSBXx2cZhO4sjPJ8/geDr5H/53AwEhHcnb0=",
+        "owner": "Rexcrazy804",
+        "repo": "hjem-impure",
+        "rev": "deb108d9e8e86cf21cf45c60fddf2ea6239e531d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rexcrazy804",
+        "repo": "hjem-impure",
         "type": "github"
       }
     },
@@ -60,6 +75,7 @@
     "root": {
       "inputs": {
         "hjem": "hjem",
+        "hjem-impure": "hjem-impure",
         "nixpkgs": "nixpkgs",
         "quickshell": "quickshell",
         "systems": "systems_2",

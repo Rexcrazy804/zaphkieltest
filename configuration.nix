@@ -26,9 +26,11 @@
     # if not using the kurukuruDM nixosModule
     # inputs.zaphkiel.packages.${pkgs.systme}.kurukurubar
   ];
+  hjem.extraModules = [inputs.hjem-impure.hjemModules.default];
   hjem.users.rexies = {
     enable = true;
     user = "rexies";
+    impure.enable = true;
     directory = config.users.users.rexies.home;
     clobberFiles = lib.mkForce true;
     files = {
@@ -40,6 +42,8 @@
         }
       '';
       ".config/background".source = config.programs.kurukuruDM.settings.wallpaper;
+      "kok".source = ./mytestdots/kokomi;
+      "backgrounds".source = "${pkgs.gnome-backgrounds}/share/backgrounds/gnome";
     };
   };
 
@@ -50,7 +54,7 @@
     createHome = true;
     isNormalUser = true;
     extraGroups = ["wheel"];
-    packages = [];
+    packages = [pkgs.yazi];
   };
 
   # vm only stuff

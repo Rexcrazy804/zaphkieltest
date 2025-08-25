@@ -26,6 +26,8 @@
     # if not using the kurukuruDM nixosModule
     # inputs.zaphkiel.packages.${pkgs.systme}.kurukurubar
   ];
+
+  # for hjem-impure
   hjem.extraModules = [inputs.hjem-impure.hjemModules.default];
   hjem.users.rexies = {
     enable = true;

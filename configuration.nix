@@ -27,16 +27,10 @@
     # inputs.zaphkiel.packages.${pkgs.systme}.kurukurubar
   ];
   hjem.extraModules = [inputs.hjem-impure.hjemModules.default];
-  hjem.users.rexies = let
-    inherit (config.hjem.users.rexies.impure) dotsDir;
-  in {
+  hjem.users.rexies = {
     enable = true;
     user = "rexies";
-    impure = {
-      enable = true;
-      dotsDir = "${./mytestdots}";
-      dotsDirImpure = "/home/rexies/mytestdots";
-    };
+    impure.enable = true;
     directory = config.users.users.rexies.home;
     clobberFiles = lib.mkForce true;
     files = {
@@ -48,12 +42,8 @@
         }
       '';
       ".config/background".source = config.programs.kurukuruDM.settings.wallpaper;
-    };
-    xdg.config.files = {
-      "sangonomiya".source = dotsDir + "/kokomi";
-    };
-    files = {
-      "kok".source = dotsDir + "/kokomi";
+      "kok".source = ./mytestdots/kokomi;
+      "backgrounds".source = "${pkgs.gnome-backgrounds}/share/backgrounds/gnome";
     };
   };
 

@@ -23,17 +23,17 @@
     },
     "hjem-impure": {
       "locked": {
-        "lastModified": 1755869554,
-        "narHash": "sha256-cip8wVz8xBgma4DLPjbiFfSVPpLKfEw9BoYkOJpUAbM=",
-        "ref": "refs/heads/master",
-        "rev": "91b5ad689612d451ba265240ac2f8d60cff06c22",
-        "revCount": 18,
-        "type": "git",
-        "url": "file:///home/rexies/Everwinter/Nix/hjem-impure"
+        "lastModified": 1756118186,
+        "narHash": "sha256-XvsDMpACcSBXx2cZhO4sjPJ8/geDr5H/53AwEhHcnb0=",
+        "owner": "Rexcrazy804",
+        "repo": "hjem-impure",
+        "rev": "deb108d9e8e86cf21cf45c60fddf2ea6239e531d",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/rexies/Everwinter/Nix/hjem-impure"
+        "owner": "Rexcrazy804",
+        "repo": "hjem-impure",
+        "type": "github"
       }
     },
     "nixpkgs": {

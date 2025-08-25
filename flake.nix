@@ -8,7 +8,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hjem-impure = {
-      url = "git+file:///home/rexies/Everwinter/nix/hjem-impure";
+      # url = "git+file:///home/rexies/Everwinter/nix/hjem-impure";
+      url = "github:Rexcrazy804/hjem-impure";
     };
     quickshell = {
       url = "github:quickshell-mirror/quickshell";
